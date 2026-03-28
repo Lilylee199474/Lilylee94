@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Lily Lee — Web Designer</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- ── FLOATING PILL NAV ── -->
+<nav>
+  <a href="#" class="nav-logo" onclick="goPage('home',event)">LL</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#" id="nl-home" class="active" onclick="goPage('home',event)" data-i18n="nav-home">首頁</a>
+    <a href="#" onclick="goAnchor('projects',event)" data-i18n="nav-projects">作品</a>
+<a href="#" onclick="goAnchor('contact',event)" data-i18n="nav-contact">聯絡我</a>
+  </div>
+  <a href="#" class="nav-resume-btn" onclick="goPage('resume',event)" data-i18n="nav-resume">履歷 ↓</a>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+</nav>
+
+<!-- ══════════════════════ HOME ══════════════════════ -->
+<div id="page-home" class="page active" style="padding-top:0;">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- Geometric shapes -->
+    <div class="hero-shapes">
+
+      <!-- ✦ 4-star sparkle · top-right · orange · spins CW · parallax up fast -->
+      <svg class="hs-spin-cw" data-depth="-0.08" width="72" height="72" style="top:12%;right:9%;" viewBox="0 0 72 72">
+        <path d="M36 3C36 3 39 28 50 36C39 44 36 69 36 69C36 69 33 44 22 36C33 28 36 3 36 3Z" fill="#f97316" opacity=".85"/>
+        <path d="M3 36C3 36 28 33 36 22C44 33 69 36 69 36C69 36 44 39 36 50C28 39 3 36 3 36Z" fill="#f97316" opacity=".85"/>
+      </svg>
+
+      <!-- ◯ thick circle ring · left · baby blue · parallax up slow -->
+      <svg data-depth="-0.04" width="90" height="90" style="top:32%;left:2%;" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="34" fill="none" stroke="#60c8f0" stroke-width="9" opacity=".72"/>
+      </svg>
+
+      <!-- ✚ rounded cross · upper-left · pink · spins CCW -->
+      <svg class="hs-spin-ccw" data-depth="-0.06" width="58" height="58" style="top:16%;left:18%;" viewBox="0 0 58 58">
+        <rect x="22" y="4" width="14" height="50" rx="7" fill="#e05fa0" opacity=".8"/>
+        <rect x="4" y="22" width="50" height="14" rx="7" fill="#e05fa0" opacity=".8"/>
+      </svg>
+
+      <!-- △ triangle outline · bottom-right · orange · parallax down -->
+      <svg data-depth="0.06" width="64" height="56" style="bottom:22%;right:12%;" class="hs-hide-mobile" viewBox="0 0 64 56">
+        <polygon points="32,3 61,53 3,53" fill="none" stroke="#fb923c" stroke-width="6" stroke-linejoin="round" opacity=".75"/>
+      </svg>
+
+
+      <!-- ✱ asterisk burst · center-right · purple · spins CW slow -->
+      <svg class="hs-spin-cw" style="animation-duration:28s;top:52%;right:6%;" data-depth="-0.05" width="52" height="52" viewBox="0 0 52 52">
+        <rect x="23" y="4" width="6" height="44" rx="3" fill="#a855d4" opacity=".65"/>
+        <rect x="23" y="4" width="6" height="44" rx="3" fill="#a855d4" opacity=".65" transform="rotate(60 26 26)"/>
+        <rect x="23" y="4" width="6" height="44" rx="3" fill="#a855d4" opacity=".65" transform="rotate(120 26 26)"/>
+      </svg>
+
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-left">
+        <p class="hello-line reveal">
+          <span data-i18n="hero-hello">Hello 👋，很高興你來到這裡</span> &nbsp;
+          <span class="status-dot" data-i18n="hero-status">接受工作邀約</span>
+        </p>
+        <h1 class="hero-h1 reveal r2">
+          I'm <span class="grad-text"><br class="mobile-br">Lily Lee</span>
+        </h1>
+        <p class="hero-bio reveal r3" data-i18n="hero-bio">
+          <strong>李酈庭 (Lily Lee)</strong>
+           <br>— 是一名累積了將近十年工作經驗的設計師。能與各部門順利對接，在多個時程緊湊的專案中保持穩定產出，具備邏輯思考與良好理解能力，在高壓環境中依然能確保品質。
+        </p>
+        <div class="btn-row reveal r4">
+          <a href="#" class="btn-fill" onclick="goAnchor('projects',event)" data-i18n="hero-cta1">查看作品 ↓</a>
+          <a href="#" class="btn-ghost" onclick="goAnchor('contact',event)" data-i18n="hero-cta2">聯繫我</a>
+        </div>
+      </div>
+
+      <!-- 照片卡 -->
+      <div class="hero-right">
+        <div class="photo-card">
+          <div class="photo-tape"></div>
+          <div class="photo-frame">
+            <img src="images/me2.webp" alt="Lily Lee">
+          </div>
+          <!-- 幾何裝飾 -->
+          <svg class="photo-deco pd-star" viewBox="0 0 24 24" width="30" height="30">
+            <path d="M12 1C12 1 13.2 10 17 12C13.2 14 12 23 12 23C12 23 10.8 14 7 12C10.8 10 12 1 12 1Z" fill="#fb923c"/>
+            <path d="M1 12C1 12 10 10.8 12 7C14 10.8 23 12 23 12C23 12 14 13.2 12 17C10 13.2 1 12 1 12Z" fill="#fb923c"/>
+          </svg>
+          <svg class="photo-deco pd-ring" viewBox="0 0 32 32" width="36" height="36">
+            <circle cx="16" cy="16" r="11" fill="none" stroke="#60c8f0" stroke-width="4"/>
+          </svg>
+          <svg class="photo-deco pd-cross" viewBox="0 0 24 24" width="26" height="26">
+            <rect x="10" y="2" width="4" height="20" rx="2" fill="#e05fa0"/>
+            <rect x="2" y="10" width="20" height="4" rx="2" fill="#e05fa0"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLSET SCROLL ══ -->
+  <div class="skillset-scroll" id="skillsetSection">
+    <div class="skillset-sticky">
+
+      <!-- Title underneath -->
+      <div class="skillset-title-wrap">
+        <p class="skillset-eyebrow" data-i18n="skills-eyebrow">What I bring to the table</p>
+        <h2 class="skillset-h2">My <em>'Hire Me'</em><br>Skillset</h2>
+        <ul class="sk-mobile-list">
+          <li><span class="sk-ml-icon">🎨</span><span data-i18n="sk1">Visual Design</span></li>
+          <li><span class="sk-ml-icon">💻</span><span data-i18n="sk2">Digital Design</span></li>
+          <li><span class="sk-ml-icon">⚡</span><span data-i18n="sk3">Vibe Coding</span></li>
+          <li><span class="sk-ml-icon">🎨</span><span data-i18n="sk4">Illustration</span></li>
+          <li><span class="sk-ml-icon">🌐</span><span data-i18n="sk5">Web Design</span></li>
+          <li><span class="sk-ml-icon">✦</span><span data-i18n="sk6">Motion &amp; Design</span></li>
+        </ul>
+      </div>
+
+      <!-- Cards on top -->
+      <div class="skillset-cards-stage" id="skStage">
+        <div class="sk-card" id="sk0">
+          <span class="sk-card-icon">🎨</span>
+          <span class="sk-card-num">01</span>
+          <span class="sk-card-name" data-i18n="sk1">Visual Design</span>
+        </div>
+        <div class="sk-card" id="sk1">
+          <span class="sk-card-icon">💻</span>
+          <span class="sk-card-num">02</span>
+          <span class="sk-card-name" data-i18n="sk2">Digital Design</span>
+        </div>
+        <div class="sk-card" id="sk2">
+          <span class="sk-card-icon">⚡</span>
+          <span class="sk-card-num">03</span>
+          <span class="sk-card-name" data-i18n="sk3">Vibe Coding</span>
+        </div>
+        <div class="sk-card" id="sk3">
+          <span class="sk-card-icon">🎨</span>
+          <span class="sk-card-num">04</span>
+          <span class="sk-card-name" data-i18n="sk4">Illustration</span>
+        </div>
+        <div class="sk-card" id="sk4">
+          <span class="sk-card-icon">🌐</span>
+          <span class="sk-card-num">05</span>
+          <span class="sk-card-name" data-i18n="sk5">Web Design</span>
+        </div>
+        <div class="sk-card" id="sk5">
+          <span class="sk-card-icon">✦</span>
+          <span class="sk-card-num">06</span>
+          <span class="sk-card-name" data-i18n="sk6">Motion &amp;Design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WEB PROJECTS -->
+  <section class="section" id="projects">
+    <div class="sec-header reveal">
+      <div>
+        <p class="eyebrow" data-i18n="proj-eyebrow">網頁作品</p>
+        <h2 class="sec-title"><span class="grad-text">Projects</span></h2>
+      </div>
+      <a href="#" class="view-all" onclick="goPage('portfolio',event)" data-i18n="proj-viewall">查看全部 →</a>
+    </div>
+
+  </section>
+
+  <!-- STACKING PROJECT CARDS -->
+  <div class="project-stack" id="projectStack">
+    <div class="ps-sticky">
+      <div class="ps-stage">
+
+        <a href="https://stirring-tartufo-db40a0.netlify.app/" class="ps-card" id="ps0" target="_blank" rel="noopener">
+          <div class="ps-thumb">
+            <img src="images/project-01.webp" alt="雙11">
+          </div>
+          <div class="ps-body">
+            <div class="ps-num">01 / 06</div>
+            <span class="web-label" data-i18n="p1-label">活動頁</span>
+            <div class="ps-name" data-i18n="p1-name">雙 11 劇無霸活動頁</div>
+            <p class="ps-desc" data-i18n="p1-desc">強烈視覺張力帶動促銷氛圍的雙十一活動頁。</p>
+            <div class="web-cta ps-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div>
+          </div>
+        </a>
+
+        <a href="/wbc.html" class="ps-card" id="ps1" target="_blank" rel="noopener">
+          <div class="ps-thumb">
+            <img src="images/project-09.webp" alt="WBC">
+          </div>
+          <div class="ps-body">
+            <div class="ps-num">02 / 06</div>
+            <span class="web-label" data-i18n="p2-label">活動頁</span>
+            <div class="ps-name" data-i18n="p2-name">WBC活動頁</div>
+            <p class="ps-desc" data-i18n="p2-desc">動感視覺呈現賽事臨場感。</p>
+            <div class="web-cta ps-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div>
+          </div>
+        </a>
+
+        <a href="https://www.homeplus.net.tw/cable/page/bdkf2g" class="ps-card" id="ps2" target="_blank" rel="noopener">
+          <div class="ps-thumb">
+            <img src="images/project-03.webp" alt="智慧社區">
+          </div>
+          <div class="ps-body">
+            <div class="ps-num">03 / 06</div>
+            <span class="web-label" data-i18n="p3-label">活動頁</span>
+            <div class="ps-name" data-i18n="p3-name">智慧社區活動頁</div>
+            <p class="ps-desc" data-i18n="p3-desc">清晰呈現智慧家庭方案特色與使用情境。</p>
+            <div class="web-cta ps-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div>
+          </div>
+        </a>
+
+        <a href="https://dribbble.com/abbylee1994" class="ps-card" id="ps3" target="_blank" rel="noopener">
+          <div class="ps-thumb"><img src="images/project-04.webp" alt="插畫"></div>
+          <div class="ps-body">
+            <div class="ps-num">04 / 06</div>
+            <span class="web-label" data-i18n="p4-label">平面 &amp; 插畫</span>
+            <div class="ps-name" data-i18n="p4-name">平面與插畫作品集</div>
+            <p class="ps-desc" data-i18n="p4-desc">Dribbble 上的平面設計與插畫創作。</p>
+            <div class="web-cta ps-cta"><span class="web-cta-text">Dribbble ↗</span><div class="web-arrow">↗</div></div>
+          </div>
+        </a>
+
+        <a href="https://effervescent-cannoli-8a8cd6.netlify.app/" class="ps-card" id="ps4" target="_blank" rel="noopener">
+          <div class="ps-thumb"><img src="images/project-05.webp" alt="母親節"></div>
+          <div class="ps-body">
+            <div class="ps-num">05 / 06</div>
+            <span class="web-label" data-i18n="p5-label">活動頁</span>
+            <div class="ps-name" data-i18n="p5-name">歡慶母親節活動頁</div>
+            <p class="ps-desc" data-i18n="p5-desc">溫暖色調情感導向的節日氛圍活動頁。</p>
+            <div class="web-cta ps-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div>
+          </div>
+        </a>
+
+        <a href="https://incredible-licorice-6eb129.netlify.app/" class="ps-card" id="ps5" target="_blank" rel="noopener">
+          <div class="ps-thumb"><img src="images/project-06.webp" alt="Cafe!n"></div>
+          <div class="ps-body">
+            <div class="ps-num">06 / 06</div>
+            <span class="web-label" data-i18n="p6-label">活動頁</span>
+            <div class="ps-name" data-i18n="p6-name">Cafe!n 活動頁</div>
+            <p class="ps-desc" data-i18n="p6-desc">品牌個性結合清晰行動引導的咖啡品牌專頁。</p>
+            <div class="web-cta ps-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div>
+          </div>
+        </a>
+
+      </div>
+      <div class="ps-footer" id="psFooter">
+        <a href="#" class="view-all-cta" onclick="goPage('portfolio',event)" data-i18n="proj-viewall">查看全部 →</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- HOBBIES -->
+  <section class="section hobbies-section">
+    <div class="hobbies-inner">
+
+      <!-- 左：文案 -->
+      <div class="hobbies-text reveal">
+        <p class="eyebrow" data-i18n="hobbies-eyebrow">設計以外的我</p>
+        <h2 class="sec-title" style="margin-top:12px;">Life &amp; <span class="grad-text">Hobbies</span></h2>
+        <p class="hobbies-body" data-i18n="hobbies-body">平常的興趣是競技鋼管與滑雪。兩種運動都需要力量、穩定度與長期練習，那種「反覆失敗後成功」的感覺讓我很著迷，這些興趣雖然看似與設計不同，但反而讓我在工作上更有紀律、更能承受壓力，也更願意挑戰新的技術。</p>
+      </div>
+
+      <!-- 右：兩張照片疊在一起 -->
+      <div class="hobbies-photos reveal r2">
+
+        <div class="hobby-photo-card hc-left">
+          <div class="photo-tape"></div>
+          <div class="photo-frame">
+            <img src="images/poledancing.webp" alt="競技鋼管">
+            <div class="hobby-label" data-i18n="hobby-pole">競技鋼管</div>
+          </div>
+          <svg class="photo-deco hpd-a" viewBox="0 0 24 24" width="28" height="28">
+            <path d="M12 1C12 1 13.2 10 17 12C13.2 14 12 23 12 23C12 23 10.8 14 7 12C10.8 10 12 1 12 1Z" fill="#fb923c"/>
+            <path d="M1 12C1 12 10 10.8 12 7C14 10.8 23 12 23 12C23 12 14 13.2 12 17C10 13.2 1 12 1 12Z" fill="#fb923c"/>
+          </svg>
+          <svg class="photo-deco hpd-b" viewBox="0 0 32 32" width="32" height="32">
+            <circle cx="16" cy="16" r="11" fill="none" stroke="#a855d4" stroke-width="4"/>
+          </svg>
+        </div>
+
+        <div class="hobby-photo-card hc-right">
+          <div class="photo-tape"></div>
+          <div class="photo-frame">
+            <img src="images/snowboard.webp" alt="滑雪">
+            <div class="hobby-label" data-i18n="hobby-snow">滑雪</div>
+          </div>
+          <svg class="photo-deco hpd-c" viewBox="0 0 24 24" width="26" height="26">
+            <rect x="10" y="2" width="4" height="20" rx="2" fill="#e05fa0"/>
+            <rect x="2" y="10" width="20" height="4" rx="2" fill="#e05fa0"/>
+          </svg>
+          <svg class="photo-deco hpd-d" viewBox="0 0 64 56" width="36" height="32">
+            <polygon points="32,3 61,53 3,53" fill="none" stroke="#60c8f0" stroke-width="5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <section class="contact-strip" id="contact">
+    <p class="c-label reveal" data-i18n="contact-label">保持聯繫</p>
+    <h2 class="c-h2 reveal r2" data-i18n="contact-h2">有合作<br>想法<span class="grad-text">嗎？</span></h2>
+    <a href="mailto:abbylee19940704@gmail.com" class="c-email reveal r3">abbylee19940704@gmail.com</a>
+  </section>
+
+  <footer>
+    <span data-i18n="footer-copy">© 2025 李酈庭 Lily Lee</span>
+  </footer>
+</div>
+
+<!-- ══════════════════════ RESUME ══════════════════════ -->
+<div id="page-resume" class="page">
+  <div class="resume-dl-bar">
+    <a href="resume-print.html" target="_blank" class="resume-dl-btn">⬇ 下載 PDF</a>
+  </div>
+  <div class="resume-layout">
+    <aside class="resume-sidebar">
+      <div class="r-avatar-row">
+        <div class="r-avatar">
+          <img src="images/me2.webp" alt="Lily Lee">
+        </div>
+        <a href="resume-print.html" target="_blank" class="resume-dl-btn r-dl-mobile">⬇ 下載 PDF</a>
+      </div>
+      <div class="r-name">李酈庭</div>
+      <div class="r-tag">Web Designer</div>
+      <a href="mailto:abbylee19940704@gmail.com" class="r-contact">✉ abbylee19940704@gmail.com</a>
+      <div class="r-contact">📍 Taiwan</div>
+      <a href="https://dribbble.com/abbylee1994" target="_blank" rel="noopener" class="r-contact">🎨 dribbble.com/abbylee1994</a>
+      <div class="r-sec-label" data-i18n="r-skills-label">技能</div>
+      <div>
+        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">Sketch</span>
+        <span class="skill-pill">HTML/CSS</span>
+        <span class="skill-pill">UI Design</span>
+        <span class="skill-pill">After Effects</span>
+        <span class="skill-pill">Illustration</span>
+        <span class="skill-pill">Photoshop</span>
+        <span class="skill-pill">Illustrator</span>
+        <span class="skill-pill">InDesign</span>
+      </div>
+      <div class="r-sec-label" data-i18n="r-edu-label">學歷</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">
+        <span data-i18n="r-edu-school">國立雲林科技大學</span><br>
+        <span style="color:var(--ink3);" data-i18n="r-edu-dept">創意生活設計系 · 2016</span>
+      </div>
+    </aside>
+    <main class="resume-main">
+      <h1 class="r-sec-title" data-i18n="r-about-title">關於我</h1>
+      <div class="r-bio">
+        <p data-i18n="r-bio-p1">來自台中，自幼受家庭薰陶對美學敏銳，畢業於國立雲林科技大學創意生活設計系。近十年歷程橫跨品牌視覺、插畫、活動頁與網站切版，擅長跨部門溝通，高壓環境下仍能穩定產出。</p>
+        <p data-i18n="r-bio-p2">職涯從美術老師起步磨練溝通力；入行後以兩週自學 AE 獨立作業；2019 年隻身赴菲律賓擔任 UI 設計師，在陌生環境維持穩定輸出。目前於中嘉數位擔任資深網頁設計師，主導 Disney+、DAZN、雙 11 等大型活動頁。接案合作對象含公視台語台、教育部國教署、北市府熊讚，具扎實平面與插畫實力。</p>
+      </div>
+      <h1 class="r-sec-title" style="margin-top:40px;" data-i18n="r-work-title">工作經歷</h1>
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-role" data-i18n="exp1-role">資深網頁設計師</div>
+          <div class="exp-period">2024/12 — <span data-i18n="exp-now">至今</span></div>
+        </div>
+        <div class="exp-co" data-i18n="exp1-co">中嘉數位股份有限公司</div>
+        <ul class="exp-ul">
+          <li data-i18n="exp1-li1">配合行銷策略優化官網內容頁面，提升整體視覺一致性。</li>
+          <li data-i18n="exp1-li2">製作異業合作（Disney+、DAZN）、節慶檔期（雙11）之 KV、Banner 及活動頁。</li>
+          <li data-i18n="exp1-li3">獨立負責專案時程追蹤與解決方案提出，確保穩定交付。</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-role" data-i18n="exp2-role">UI 設計師</div>
+          <div class="exp-period">2019/08 — 2024/10</div>
+        </div>
+        <div class="exp-co" data-i18n="exp2-co">安博集團（菲律賓 / 遠端）</div>
+        <ul class="exp-ul">
+          <li data-i18n="exp2-li1">為旗下多個平台設計 UI/UX 介面與行銷素材，持續提升用戶體驗。</li>
+          <li data-i18n="exp2-li2">製作 Motion Graphics 用於社群廣告與產品介紹影片。</li>
+          <li data-i18n="exp2-li3">全遠端辦公環境下獨立完成任務，展現高度自律與精準交付能力。</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-role" data-i18n="exp3-role">設計助理</div>
+          <div class="exp-period">2017/07 — 2019/07</div>
+        </div>
+        <div class="exp-co" data-i18n="exp3-co">bigbigchannel — 聯意投資股份有限公司</div>
+        <ul class="exp-ul">
+          <li data-i18n="exp3-li1">負責節目海報、社群內容及廣告橫幅設計製作。</li>
+          <li data-i18n="exp3-li2">利用 After Effects 製作節目轉場特效與行銷影片。</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-role" data-i18n="exp5-role">平面設計接案</div>
+          <div class="exp-period">2020 — <span data-i18n="exp-now">至今</span></div>
+        </div>
+        <div class="exp-co" data-i18n="exp5-co">自由接案（兼職）</div>
+        <ul class="exp-ul">
+          <li data-i18n="exp5-li1">合作客戶涵蓋公視台語台、教育部國教署、北市府熊讚等知名單位。</li>
+          <li data-i18n="exp5-li2">負責插畫設計、視覺延伸與社群素材製作，獨立完成需求溝通至交付全流程。</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-role" data-i18n="exp4-role">美術老師</div>
+          <div class="exp-period">2013/04 — 2017/01</div>
+        </div>
+        <div class="exp-co" data-i18n="exp4-co">郭老師美術教室 — 雲林縣虎尾鎮</div>
+        <ul class="exp-ul">
+          <li data-i18n="exp4-li1">規劃並教授兒童與青少年美術課程，涵蓋素描、水彩、彩繪等多樣化藝術形式。</li>
+          <li data-i18n="exp4-li2">提供學生個別化創作指導，提升藝術技巧，培養創意表達能力。</li>
+          <li data-i18n="exp4-li3">設計富教育意義的課程內容，激發學習興趣與美學素養。</li>
+          <li data-i18n="exp4-li4">與家長保持良好溝通，定期回饋學生學習進度與成長狀況。</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════════════════ ABOUT ══════════════════════ -->
+
+<!-- ══════════════════════ PORTFOLIO FULL ══════════════════════ -->
+<div id="page-portfolio" class="page">
+  <div class="port-hero">
+    <p class="eyebrow" style="margin-bottom:12px;" data-i18n="port-eyebrow">所有作品</p>
+    <h1 style="font-size:clamp(44px,6vw,80px);font-weight:800;letter-spacing:-.04em;line-height:1.0;margin-bottom:18px;color:var(--ink);">Portfolio</h1>
+    <p style="font-size:15px;color:var(--ink2);max-width:460px;line-height:1.8;" data-i18n="port-desc">每個專案都是一次說故事的機會。</p>
+  </div>
+  <div class="section">
+    <div class="web-grid">
+      <a href="https://dribbble.com/abbylee1994" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-04.webp" alt="插畫"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp1-label">平面 &amp; 插畫</span><div class="web-name" data-i18n="pp1-name">平面與插畫作品集</div><p class="web-desc" data-i18n="pp1-desc">Dribbble 上的平面設計與插畫創作。</p><div class="web-cta"><span class="web-cta-text">Dribbble</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="https://stirring-tartufo-db40a0.netlify.app/" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-01.webp" alt="雙11"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp2-label">活動頁</span><div class="web-name" data-i18n="pp2-name">雙 11 劇無霸活動頁</div><p class="web-desc" data-i18n="pp2-desc">強烈視覺張力帶動促銷氛圍。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="https://www.homeplus.net.tw/cable/page/82" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-02.webp" alt="DAZN"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp3-label">活動頁</span><div class="web-name" data-i18n="pp3-name">運動看 DAZN 活動頁</div><p class="web-desc" data-i18n="pp3-desc">DAZN 串流平台合作活動專頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="https://www.homeplus.net.tw/cable/page/bdkf2g" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-03.webp" alt="智慧社區"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp4-label">活動頁</span><div class="web-name" data-i18n="pp4-name">智慧社區活動頁</div><p class="web-desc" data-i18n="pp4-desc">智慧家庭方案清晰介紹頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="wbc.html" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-09.webp" alt="WBC經典賽"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp5-label">活動頁</span><div class="web-name" data-i18n="pp5-name">WBC 經典賽活動頁</div><p class="web-desc" data-i18n="pp5-desc">世界棒球經典賽台灣主題活動視覺設計。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="https://www.homeplus.net.tw/cable/page/2" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-08.webp" alt="短約"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp6-label">產品頁</span><div class="web-name" data-i18n="pp6-name">短約產品頁</div><p class="web-desc" data-i18n="pp6-desc">彈性短約方案清晰介紹頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="https://www.homeplus.net.tw/cable/page/1" target="_blank" rel="noopener" class="web-card">
+         <div class="web-thumb"><img src="images/project-07.webp" alt="升速"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp7-label">產品頁</span><div class="web-name" data-i18n="pp7-name">升速產品頁</div><p class="web-desc" data-i18n="pp7-desc">網路升速方案產品頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="https://effervescent-cannoli-8a8cd6.netlify.app/" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-05.webp" alt="母親節"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp8-label">活動頁</span><div class="web-name" data-i18n="pp8-name">歡慶母親節活動頁</div><p class="web-desc" data-i18n="pp8-desc">節日氛圍活動頁設計。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+      <a href="https://incredible-licorice-6eb129.netlify.app/" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/project-06.webp" alt="Cafe!n"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp9-label">活動頁</span><div class="web-name" data-i18n="pp9-name">Cafe!n 活動頁</div><p class="web-desc" data-i18n="pp9-desc">咖啡品牌活動專頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
+    </div>
+  </div>
+  <footer><span data-i18n="port-footer">© 2025 李酈庭 Lily Lee</span><span>Web Designer · Taiwan</span></footer>
+</div>
+
+<script>
+/* ── CURSOR ── */
+const cur = document.getElementById('cur');
+const ring = document.getElementById('curRing');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+});
+(function animRing() {
+  rx += (mx - rx) * .1; ry += (my - ry) * .1;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+})();
+
+/* ── PAGE SWITCH ── */
+let curPage = 'home';
+function goPage(id, e) {
+  if (e) e.preventDefault();
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+  document.getElementById('page-' + id).style.display = 'block';
+  curPage = id;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  document.querySelectorAll('#navLinks a').forEach(a => a.classList.remove('active'));
+  const map = { home: 'nl-home' };
+  if (map[id]) document.getElementById(map[id])?.classList.add('active');
+  triggerReveal();
+}
+
+function goAnchor(id, e) {
+  if (e) e.preventDefault();
+  if (curPage !== 'home') {
+    goPage('home', null);
+    setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 120);
+  } else {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+
+/* ── SCROLL REVEAL ── */
+function triggerReveal() {
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight * .93)
+        el.classList.add('visible');
+    });
+  }, 60);
+}
+window.addEventListener('scroll', triggerReveal, { passive: true });
+triggerReveal();
+
+/* ── PROJECT STACK SCROLL ── */
+(function(){
+  const stack = document.getElementById('projectStack');
+  if (!stack) return;
+  const psCards = Array.from(document.querySelectorAll('#projectStack .ps-card'));
+  const n = psCards.length;
+  const steps = n - 1;
+
+  function getProgress() {
+    const scrollable = stack.offsetHeight - window.innerHeight;
+    if (scrollable <= 0) return 0;
+    return Math.min(Math.max(-stack.getBoundingClientRect().top / scrollable, 0), 1);
+  }
+
+  function easeOut3(t) { return 1 - Math.pow(1 - t, 3); }
+
+  let rafId = null;
+
+  function tick() {
+    rafId = null;
+    const p = getProgress();
+    psCards.forEach((card, i) => {
+      let cardsAbove = 0;
+      for (let k = i + 1; k < n; k++) {
+        const lp = Math.min(1, Math.max(0, (p - (k - 1) / steps) / (1 / steps)));
+        cardsAbove += easeOut3(lp);
+      }
+      const scale = 1 - cardsAbove * 0.035;
+      const yShift = cardsAbove * 10;
+
+      let ty = 0;
+      if (i > 0) {
+        const lp = Math.min(1, Math.max(0, (p - (i - 1) / steps) / (1 / steps)));
+        ty = (1 - easeOut3(lp)) * 100;
+      }
+
+      card.style.transform = `translateY(${ty}vh) translateY(-${yShift.toFixed(2)}px) scale(${scale.toFixed(4)})`;
+      card.style.zIndex = 10 + i;
+    });
+
+    const footer = document.getElementById('psFooter');
+    if (footer) footer.style.opacity = Math.max(0, (p - 0.85) / 0.15).toFixed(3);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  }, { passive: true });
+  window.addEventListener('resize', () => {
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  });
+  tick();
+})();
+
+/* ── HERO SHAPES PARALLAX ── */
+(function(){
+  const shapes = document.querySelectorAll('.hero-shapes [data-depth]');
+  function updateParallax(){
+    const y = window.scrollY;
+    shapes.forEach(el => {
+      const depth = parseFloat(el.dataset.depth);
+      // keep existing CSS animation transform by using translateY on the SVG element directly
+      el.style.marginTop = (y * depth) + 'px';
+    });
+  }
+  window.addEventListener('scroll', updateParallax, { passive:true });
+})();
+
+/* ── SKILLSET SCROLL ANIMATION ── */
+(function () {
+  const skDefs = [
+    { id:'sk0', tx:-420, ty:-230, rot:-9,  initRot:-4  },
+    { id:'sk1', tx:  10, ty:-310, rot: 3,  initRot: 6  },
+    { id:'sk2', tx: 420, ty:-210, rot: 11, initRot:-2  },
+    { id:'sk3', tx:-400, ty: 240, rot:  7, initRot: 8  },
+    { id:'sk4', tx:   0, ty: 320, rot: -6, initRot:-7  },
+    { id:'sk5', tx: 410, ty: 230, rot:-10, initRot: 3  },
+  ];
+
+  const skState = skDefs.map(d => ({ x:0, y:0, rot: d.initRot }));
+  let skRaf = null;
+  let skCards = null;
+
+  function initSk() {
+    skCards = skDefs.map(def => {
+      const el = document.getElementById(def.id);
+      if (!el) return null;
+      el.style.transform = `rotate(${def.initRot}deg)`;
+      return { ...def, el };
+    }).filter(Boolean);
+  }
+
+  function lerpSk(a, b, t) { return a + (b - a) * t; }
+  function easeOut3(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function getSkProgress() {
+    const section = document.getElementById('skillsetSection');
+    if (!section) return 0;
+    const scrollRange = section.scrollHeight - window.innerHeight;
+    if (scrollRange <= 0) return 0;
+    const scrolled = -section.getBoundingClientRect().top;
+    return Math.min(Math.max(scrolled / scrollRange, 0), 1);
+  }
+
+  function skTick() {
+    if (!skCards) initSk();
+    if (!skCards || !skCards.length) { skRaf = null; return; }
+
+    const progress = getSkProgress();
+    const eased = easeOut3(progress);
+    let moving = false;
+    const SPEED = 0.1;
+
+    skCards.forEach((card, i) => {
+      const s = skState[i];
+      const tX  = card.tx * eased;
+      const tY  = card.ty * eased;
+      const tRot = card.initRot + (card.rot - card.initRot) * eased;
+      s.x   = lerpSk(s.x,   tX,   SPEED);
+      s.y   = lerpSk(s.y,   tY,   SPEED);
+      s.rot = lerpSk(s.rot, tRot, SPEED);
+      card.el.style.transform = `translate(${s.x}px,${s.y}px) rotate(${s.rot}deg)`;
+      if (Math.abs(s.x-tX)>0.1 || Math.abs(s.y-tY)>0.1 || Math.abs(s.rot-tRot)>0.02) moving = true;
+    });
+
+    /* mobile skill list fades in as cards scatter */
+    const mlEl = document.querySelector('.sk-mobile-list');
+    if (mlEl) mlEl.style.opacity = Math.max(0, (eased - 0.5) * 2).toFixed(3);
+
+    skRaf = moving ? requestAnimationFrame(skTick) : null;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!skRaf) skRaf = requestAnimationFrame(skTick);
+  }, { passive: true });
+
+  requestAnimationFrame(skTick);
+})();
+
+/* ── I18N ── */
+const i18n = {
+  zh: {
+    'nav-home': '首頁',
+    'nav-projects': '作品',
+    'nav-about': '關於我',
+    'nav-contact': '聯絡我',
+    'nav-resume': '履歷 ↓',
+    'dr-home': '首頁 <span class="arr">↗</span>',
+    'dr-projects': '作品 <span class="arr">↗</span>',
+    'dr-about': '關於我 <span class="arr">↗</span>',
+    'dr-contact': '聯絡我 <span class="arr">↗</span>',
+    'dr-resume': '履歷 <span class="arr">↗</span>',
+    'hero-hello': 'Hello 👋, great to have you here',
+    'hero-status': 'Available for work',
+    'hero-bio': '<strong>資深設計師 | NYUST</strong><br>— 是一名累積了將近十年工作經驗的設計師。能與各部門順利對接，在多個時程緊湊的專案中保持穩定產出，具備邏輯思考與良好理解能力，在高壓環境中依然能確保品質。',
+    'hero-cta1': '查看作品 ↓',
+    'hero-cta2': '聯繫我',
+    'proj-eyebrow': '網頁作品',
+    'proj-viewall': '查看全部 →',
+    'p1-label': '活動頁', 'p1-name': '雙 11 劇無霸活動頁', 'p1-desc': '以高飽和視覺建構大促氛圍，在高流量下引導使用者直覺完成購物轉換。',
+    'p2-label': '活動頁', 'p2-name': 'WBC 活動頁', 'p2-desc': '運用動態排版捕捉賽事張力，強化即時資訊的易讀性與互動感。',
+    'p3-label': '活動頁', 'p3-name': '智慧社區活動頁', 'p3-desc': '將複雜的智慧家庭技術模組化，透過情境式導引降低使用者的理解門檻。',
+    'p4-label': '平面 &amp; 插畫', 'p4-name': '平面與插畫作品集', 'p4-desc': '探索視覺符號與色彩的實驗性創作，展現多元的視覺表現力與細節。',
+    'p5-label': '活動頁', 'p5-name': '歡慶母親節活動頁', 'p5-desc': '捨棄繁雜裝飾，以純粹的情感語彙營造溫馨基調，提升品牌的親近度。',
+    'p6-label': '活動頁', 'p6-name': 'CAFE!N 活動頁', 'p6-desc': '延續品牌的職人極簡風格，在美學與導購點擊率之間取得精準平衡。',
+    'know-h2': 'Get to know me?',
+    'know-sub': '探索我的興趣、故事，以及工作之外的生活。',
+    'hobbies-eyebrow': '設計以外的我', 'hobby-pole': '競技鋼管', 'hobby-snow': '滑雪',
+    'hobbies-body': '平常的興趣是競技鋼管與滑雪。兩種運動都需要力量、穩定度與長期練習，那種「反覆失敗後成功」的感覺讓我很著迷，這些興趣雖然看似與設計不同，但反而讓我在工作上更有紀律、更能承受壓力，也更願意挑戰新的技術。',
+    'contact-label': '保持聯繫',
+    'contact-h2': '<span class="grad-text">Contact</span><br>Me',
+    'skills-eyebrow': '我的技能包',
+    'sk1':'Visual Design','sk2':'Digital Design','sk3':'Vibe Coding',
+    'sk4':'Illustration','sk5':'Web Design','sk6':'Motion Design',
+    'footer-copy': '© 2025 李酈庭 Lily Lee',
+    'r-skills-label': '技能',
+    'r-edu-label': '學歷',
+    'r-about-title': '關於我',
+    'r-bio-p1': '來自台中，自幼受家庭薰陶對美學敏銳，畢業於國立雲林科技大學創意生活設計系。近十年歷程橫跨品牌視覺、插畫、活動頁與網站切版，擅長跨部門溝通，高壓環境下仍能穩定產出。',
+    'r-bio-p2': '職涯從美術老師起步磨練溝通力；入行後以兩週自學 AE 獨立作業；2019 年隻身赴菲律賓擔任 UI 設計師，在陌生環境維持穩定輸出。目前於中嘉數位擔任資深網頁設計師，主導 Disney+、DAZN、雙 11 等大型活動頁。接案合作對象含公視台語台、教育部國教署、北市府熊讚，具扎實平面與插畫實力。',
+    'r-work-title': '工作經歷',
+    'r-edu-school': '國立雲林科技大學',
+    'r-edu-dept': '創意生活設計系 · 2016',
+    'exp-now': '至今',
+    'exp1-role': '資深網頁設計師', 'exp1-co': '中嘉數位股份有限公司',
+    'exp1-li1': '配合行銷策略優化官網內容頁面，提升整體視覺一致性。',
+    'exp1-li2': '製作異業合作（Disney+、DAZN）、節慶檔期（雙11）之 KV、Banner 及活動頁。',
+    'exp1-li3': '獨立負責專案時程追蹤與解決方案提出，確保穩定交付。',
+    'exp2-role': 'UI 設計師', 'exp2-co': '安博集團（菲律賓 / 遠端）',
+    'exp2-li1': '為旗下多個平台設計 UI/UX 介面與行銷素材，持續提升用戶體驗。',
+    'exp2-li2': '製作 Motion Graphics 用於社群廣告與產品介紹影片。',
+    'exp2-li3': '全遠端辦公環境下獨立完成任務，展現高度自律與精準交付能力。',
+    'exp3-role': '設計助理', 'exp3-co': 'bigbigchannel — 聯意投資股份有限公司',
+    'exp3-li1': '負責節目海報、社群內容及廣告橫幅設計製作。',
+    'exp3-li2': '利用 After Effects 製作節目轉場特效與行銷影片。',
+    'exp5-role': '平面設計接案', 'exp5-co': '自由接案（兼職）',
+    'exp5-li1': '合作客戶涵蓋公視台語台、教育部國教署、北市府熊讚等知名單位。',
+    'exp5-li2': '負責插畫設計、視覺延伸與社群素材製作，獨立完成需求溝通至交付全流程。',
+    'exp4-role': '美術老師', 'exp4-co': '郭老師美術教室 — 雲林縣虎尾鎮',
+    'exp4-li1': '規劃並教授兒童與青少年美術課程，涵蓋素描、水彩、彩繪等多樣化藝術形式。',
+    'exp4-li2': '提供學生個別化創作指導，提升藝術技巧，培養創意表達能力。',
+    'exp4-li3': '設計富教育意義的課程內容，激發學習興趣與美學素養。',
+    'exp4-li4': '與家長保持良好溝通，定期回饋學生學習進度與成長狀況。',
+    'about-eyebrow': '關於我',
+    'about-bio': '我是一名擁有近十年經驗的設計師，擅長將美感轉化為具邏輯的設計解決方案。職涯從美術老師起步，培養了極佳的溝通能力；隨後在聯意投資快速掌握 AE 動態設計，並挑戰自我前往菲律賓擔任 UI 設計師，在遠端環境中淬鍊出高度自律與跨文化溝通的能力。',
+    'pole-eyebrow': '運動', 'pole-h2': '競技鋼管',
+    'pole-desc': '我熱衷於「反覆失敗後終於成功」的挑戰。競技鋼管的每一個動作都需要精確的力量控制與肌肉記憶，這種對細節的執著也深深影響了我面對設計的態度——每一個像素都值得被認真對待。',
+    'ski-eyebrow': '冒險', 'ski-h2': '滑雪',
+    'ski-desc': '滑雪讓我學會在陌生環境中保持冷靜、快速適應。就像當年隻身前往菲律賓工作一樣，走出舒適圈，才能真正看見更寬廣的世界。',
+    'about-connect-label': '有合作想法嗎？',
+    'about-footer-copy': '© 2025 李酈庭 Lily Lee',
+    'port-eyebrow': '所有作品',
+    'port-desc': '從活動頁到品牌視覺，每個專案都是一次說故事的機會。近十年跨領域設計經驗的完整精選。',
+    'pp1-label': '平面 &amp; 插畫', 'pp1-name': '平面與插畫作品集', 'pp1-desc': '探索視覺符號與色彩的實驗性創作，收錄於 Dribbble 的個人設計輯。',
+    'pp2-label': '活動頁', 'pp2-name': '雙 11 劇無霸活動頁', 'pp2-desc': '以高飽和視覺建構大促氛圍，在高流量下引導使用者直覺完成購物轉換。',
+    'pp3-label': '活動頁', 'pp3-name': '運動看 DAZN 活動頁', 'pp3-desc': '整合跨品牌視覺語彙，為運動串流平台打造具臨場感的聯名活動頁。',
+    'pp4-label': '活動頁', 'pp4-name': '智慧社區活動頁', 'pp4-desc': '將複雜的智慧家庭技術模組化，透過情境式導引降低使用者的理解門檻。',
+    'pp5-label': '活動頁', 'pp5-name': 'WBC 經典賽活動頁', 'pp5-desc': '運用動態排版捕捉賽事張力，結合台灣主題元素強化在地社群互動感。',
+    'pp6-label': '產品頁', 'pp6-name': '短約產品頁', 'pp6-desc': '優化複雜資費的資訊層級，讓彈性方案更直覺，提升產品申辦意願。',
+    'pp7-label': '產品頁', 'pp7-name': '升速產品頁', 'pp7-desc': '透過情境對比強化升速感，轉化技術規格為使用者有感的產品價值。',
+    'pp8-label': '活動頁', 'pp8-name': '歡慶母親節活動頁', 'pp8-desc': '捨棄繁雜裝飾，以純粹的情感語彙營造溫馨基調，提升品牌的親近度。',
+    'pp9-label': '活動頁', 'pp9-name': 'CAFE!N 活動頁', 'pp9-desc': '延續品牌的職人極簡風格，在美學與導購點擊率之間取得精準平衡。',
+    'port-footer': '© 2025 李酈庭 Lily Lee',
+  },
+  en: {
+    'nav-home': 'Home',
+    'nav-projects': 'Projects',
+    'nav-about': 'About me',
+    'nav-contact': 'Reach me',
+    'nav-resume': 'Resume ↓',
+    'dr-home': 'Home <span class="arr">↗</span>',
+    'dr-projects': 'Projects <span class="arr">↗</span>',
+    'dr-about': 'About me <span class="arr">↗</span>',
+    'dr-contact': 'Reach me <span class="arr">↗</span>',
+    'dr-resume': 'Resume <span class="arr">↗</span>',
+    'hero-hello': 'Hello 👋, great to have you here',
+    'hero-status': 'Available for work',
+    'hero-bio': '<strong>Senior Designer | NYUST</strong><br>— 10 years of design expertise. Proven ability to deliver high-quality results under pressure and lead complex, cross-functional projects with a strategic mindset.',
+    'hero-cta1': 'View Projects ↓',
+    'hero-cta2': 'Get in touch',
+    'proj-eyebrow': 'Web Works',
+    'proj-viewall': 'View all →',
+    'p1-label': 'Campaign', 'p1-name': 'Double 11 Mega Event', 'p1-desc': 'Built an immersive shopping atmosphere through high-saturation visuals to drive user conversion under high traffic.',
+    'p2-label': 'Campaign', 'p2-name': 'WBC Event Page', 'p2-desc': 'Utilized dynamic typography to capture the tension of the tournament while enhancing readability and engagement.',
+    'p3-label': 'Campaign', 'p3-name': 'Smart Community Page', 'p3-desc': 'Modularized complex smart home features through scenario-based navigation to reduce user cognitive load.',
+    'p4-label': 'Graphic & Illustration', 'p4-name': 'Design Portfolio', 'p4-desc': 'Explored experimental visual symbols and color palettes, showcasing versatile artistic expression and detail.',
+    'p5-label': 'Campaign', 'p5-name': "Mother's Day Campaign", 'p5-desc': 'Minimalist emotional storytelling that establishes a warm brand tone to enhance user affinity.',
+    'p6-label': 'Campaign', 'p6-name': 'CAFE!N Campaign', 'p6-desc': "Maintained the brand's minimalist craft aesthetic while achieving a precise balance between design and CTR.",
+    'know-h2': 'Get to know me?',
+    'know-sub': 'View the chapter on my interests, stories<br>and life outside of work.',
+    'hobbies-eyebrow': 'Beyond Design', 'hobby-pole': 'Pole Sport', 'hobby-snow': 'Snowboarding',
+    'hobbies-body': 'My hobbies are pole sport and snowboarding. Both demand strength, stability, and long-term practice. The feeling of finally succeeding after repeated failures is what keeps me hooked. While these may seem unrelated to design, they\'ve made me more disciplined, more resilient under pressure, and more willing to take on new challenges.',
+    'contact-label': "Let's Connect",
+    'contact-h2': '<span class="grad-text">Contact</span><br>Me',
+    'skills-eyebrow': 'What I bring to the table',
+    'sk1':'Visual Design','sk2':'Digital Design','sk3':'Vibe Coding',
+    'sk4':'Illustration','sk5':'Web Design','sk6':'Motion Design',
+    'footer-copy': '© 2025 Lily Lee',
+    'r-skills-label': 'Skills',
+    'r-edu-label': 'Education',
+    'r-about-title': 'About Me',
+    'r-bio-p1': 'From Taichung, with an early love for aesthetics nurtured by family. Graduated from the Department of Creative Design, National Yunlin University of Science & Technology. Nearly a decade of experience spanning brand identity, illustration, campaign pages, and web UI — skilled at cross-team collaboration and delivering quality under pressure.',
+    'r-bio-p2': 'Career began as an art teacher, sharpening communication skills. Self-taught After Effects in two weeks to work independently. In 2019, relocated solo to the Philippines as a UI designer — thriving in an unfamiliar environment. Now a Senior Web Designer at Chunghwa, leading campaigns for Disney+, DAZN, and Double 11. Freelance clients include PTS Taigi, Ministry of Education (MOE), and Taipei City Government.',
+    'r-work-title': 'Work Experience',
+    'r-edu-school': 'National Yunlin Univ. of Science & Technology',
+    'r-edu-dept': 'Creative Design · 2016',
+    'exp-now': 'Now',
+    'exp1-role': 'Senior Web Designer', 'exp1-co': 'Homeplus Digital Co., Ltd.',
+    'exp1-li1': 'Optimized website content pages aligned with marketing strategy to improve visual consistency.',
+    'exp1-li2': 'Produced KVs, banners, and campaign pages for brand partnerships (Disney+, DAZN) and seasonal events (Double 11).',
+    'exp1-li3': 'Independently managed project timelines and proposed solutions to ensure stable delivery.',
+    'exp2-role': 'UI Designer', 'exp2-co': 'ANVO Group (Philippines / Remote)',
+    'exp2-li1': 'Designed UI/UX and marketing materials for multiple platforms to continuously enhance user experience.',
+    'exp2-li2': 'Produced motion graphics for social media ads and product introduction videos.',
+    'exp2-li3': 'Worked fully remotely with high autonomy, delivering tasks accurately and on schedule.',
+    'exp3-role': 'Design Assistant', 'exp3-co': 'bigbigchannel — Lienyi Investment Co.',
+    'exp3-li1': 'Created program posters, social media content, and advertising banners.',
+    'exp3-li2': 'Produced program transitions and marketing videos using After Effects.',
+    'exp5-role': 'Freelance Graphic Designer', 'exp5-co': 'Self-employed (Part-time)',
+    'exp5-li1': 'Clients include PTS Taigi, Ministry of Education (MOE), and Taipei City Government.',
+    'exp5-li2': 'Handled illustration, visual identity extension, and social media assets — from brief to delivery.',
+    'exp4-role': 'Art Teacher', 'exp4-co': 'Guo Art Studio — Huwei, Yunlin',
+    'exp4-li1': 'Planned and taught art courses for children and teens, covering drawing, watercolor, and painting.',
+    'exp4-li2': 'Provided individualized creative guidance to improve students\' artistic skills and self-expression.',
+    'exp4-li3': 'Designed engaging, educationally meaningful lesson content to cultivate aesthetic sensibility.',
+    'exp4-li4': 'Maintained open communication with parents, providing regular feedback on student progress.',
+    'about-eyebrow': 'About Me',
+    'about-bio': "I'm a designer with nearly a decade of experience, transforming aesthetics into logical design solutions. My career started as an art teacher, sharpening communication skills. I then mastered AE motion design, and later challenged myself by moving to the Philippines as a UI designer — proving my adaptability and discipline in a remote, cross-cultural environment.",
+    'pole-eyebrow': 'Sport', 'pole-h2': 'Pole Sport',
+    'pole-desc': "I thrive on the challenge of failing repeatedly until I finally succeed. Every move in pole sport demands precise strength control and muscle memory — an obsession with detail that deeply influences how I approach design. Every pixel deserves to be taken seriously.",
+    'ski-eyebrow': 'Adventure', 'ski-h2': 'Skiing',
+    'ski-desc': "Snowboarding taught me to stay calm and adapt quickly in unfamiliar environments. Much like moving to the Philippines alone for work, stepping outside your comfort zone is where you discover a wider world.",
+    'about-connect-label': 'Have something in mind?',
+    'about-footer-copy': '© 2025 Lily Lee',
+    'port-eyebrow': 'All Work',
+    'port-desc': 'From campaign pages to brand visuals — every project is a chance to tell a story. A curated selection from nearly a decade of cross-disciplinary design.',
+    'pp1-label': 'Graphic & Illustration', 'pp1-name': 'Design Portfolio', 'pp1-desc': 'Experimental exploration of visual symbols and color palettes on Dribbble.',
+    'pp2-label': 'Campaign', 'pp2-name': 'Double 11 Mega Event', 'pp2-desc': 'Built an immersive shopping atmosphere to drive user conversion during high-traffic peak seasons.',
+    'pp3-label': 'Campaign', 'pp3-name': 'DAZN Sports Campaign', 'pp3-desc': 'Integrated co-branded visual languages to create an immersive experience for the streaming platform.',
+    'pp4-label': 'Campaign', 'pp4-name': 'Smart Community Page', 'pp4-desc': 'Modularized complex smart home features through scenario-based navigation to reduce cognitive load.',
+    'pp5-label': 'Campaign', 'pp5-name': 'WBC Campaign Page', 'pp5-desc': 'Captured tournament tension with dynamic layouts and local elements to boost community engagement.',
+    'pp6-label': 'Product', 'pp6-name': 'Short-term Plan Page', 'pp6-desc': 'Optimized information hierarchy for complex pricing, enhancing the clarity of flexible subscription plans.',
+    'pp7-label': 'Product', 'pp7-name': 'Speed Upgrade Page', 'pp7-desc': 'Translated technical specs into user benefits through visual contrast to drive upgrade intent.',
+    'pp8-label': 'Campaign', 'pp8-name': "Mother's Day Campaign", 'pp8-desc': 'Minimalist emotional storytelling that establishes a warm brand tone to enhance user affinity.',
+    'pp9-label': 'Campaign', 'pp9-name': 'CAFE!N Campaign', 'pp9-desc': "Maintained the brand's minimalist craft aesthetic while balancing high-end design with conversion performance.",
+    'port-footer': '© 2025 Lily Lee',
+  }
+};
+
+let curLang = localStorage.getItem('lang') || 'zh';
+
+function setLang(lang) {
+  curLang = lang;
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+  });
+  document.getElementById('langBtn').textContent = lang === 'zh' ? 'EN' : '中';
+}
+
+function toggleLang() {
+  setLang(curLang === 'zh' ? 'en' : 'zh');
+}
+
+setLang(curLang);
+
+// Prevent pinch-to-zoom and horizontal swipe on iOS Safari
+let _tsx = 0, _tsy = 0;
+document.addEventListener('touchstart', function(e) {
+  _tsx = e.touches[0].clientX;
+  _tsy = e.touches[0].clientY;
+}, { passive: true });
+document.addEventListener('touchmove', function(e) {
+  if (e.touches.length > 1) { e.preventDefault(); return; }
+  const dx = Math.abs(e.touches[0].clientX - _tsx);
+  const dy = Math.abs(e.touches[0].clientY - _tsy);
+  if (dx > dy) e.preventDefault();
+}, { passive: false });
+let lastTap = 0;
+document.addEventListener('touchend', function(e) {
+  const now = Date.now();
+  if (now - lastTap < 300) e.preventDefault();
+  lastTap = now;
+}, { passive: false });
+</script>
+</body>
+</html>

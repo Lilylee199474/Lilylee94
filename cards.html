@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hire Me Skillset</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #FFFCF3;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.scroll-container {
+  height: 400vh;
+  position: relative;
+}
+
+.sticky-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ambient background blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.14;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+.blob-1 { width: 500px; height: 500px; background: #a855f7; top: -120px; left: -80px; }
+.blob-2 { width: 420px; height: 420px; background: #3b82f6; bottom: -80px; right: -60px; }
+.blob-3 { width: 320px; height: 320px; background: #f97316; bottom: 15%; left: 8%; }
+
+/* Title sits BELOW the cards (z-index lower) */
+.title-wrap {
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+}
+
+.title-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #a0957a;
+  margin-bottom: 12px;
+}
+
+.title-main {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 800;
+  color: #1c1a14;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.title-main em {
+  font-style: italic;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Cards stage — ABOVE the title */
+.cards-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.card {
+  position: absolute;
+  width: 190px;
+  padding: 22px 20px;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  will-change: transform;
+  cursor: default;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.22),
+    0 4px 16px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+  /* Start: fully visible, stacked at center */
+  opacity: 1;
+}
+
+.card-icon { font-size: 22px; line-height: 1; }
+.card-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.card-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 30;
+  animation: hintBob 2s ease-in-out infinite;
+}
+.scroll-hint-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #a0957a);
+}
+.scroll-hint-text {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a0957a;
+  font-weight: 600;
+}
+@keyframes hintBob {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+  50%       { opacity: 1;   transform: translateX(-50%) translateY(7px); }
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-container">
+  <div class="sticky-viewport">
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Title underneath the cards -->
+    <div class="title-wrap">
+      <p class="title-eyebrow">What I bring to the table</p>
+      <h1 class="title-main">My <em>'Hire Me'</em><br>Skillset</h1>
+    </div>
+
+    <!-- Cards stacked on top -->
+    <div class="cards-stage" id="cardsStage">
+      <div class="card" id="c0">
+        <span class="card-icon">🎨</span>
+        <span class="card-label">01</span>
+        <span class="card-name">Visual Design</span>
+      </div>
+      <div class="card" id="c1">
+        <span class="card-icon">💻</span>
+        <span class="card-label">02</span>
+        <span class="card-name">Digital Design</span>
+      </div>
+      <div class="card" id="c2">
+        <span class="card-icon">⚡</span>
+        <span class="card-label">03</span>
+        <span class="card-name">No-code Framer</span>
+      </div>
+      <div class="card" id="c3">
+        <span class="card-icon">📱</span>
+        <span class="card-label">04</span>
+        <span class="card-name">Social Media Design</span>
+      </div>
+      <div class="card" id="c4">
+        <span class="card-icon">🌐</span>
+        <span class="card-label">05</span>
+        <span class="card-name">Web Design</span>
+      </div>
+      <div class="card" id="c5">
+        <span class="card-icon">✦</span>
+        <span class="card-label">06</span>
+        <span class="card-name">UX & UI Design</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint">
+      <span class="scroll-hint-text">Scroll</span>
+      <div class="scroll-hint-line"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ── CARD DEFINITIONS ──
+   tx/ty = final target offset in px from center
+   rot   = final rotation at full scatter
+   initRot = starting rotation (cards look like a messy deck)
+*/
+const cardDefs = [
+  { id:'c0', tx:-420, ty:-230, rot:-9,  initRot: -4, bg:'linear-gradient(145deg,#a855f7,#ec4899)' },
+  { id:'c1', tx:  10, ty:-310, rot: 3,  initRot:  6, bg:'linear-gradient(145deg,#3b82f6,#06b6d4)' },
+  { id:'c2', tx: 420, ty:-210, rot: 11, initRot: -2, bg:'linear-gradient(145deg,#10b981,#84cc16)' },
+  { id:'c3', tx:-400, ty: 240, rot:  7, initRot:  8, bg:'linear-gradient(145deg,#f97316,#ef4444)' },
+  { id:'c4', tx:  -5, ty: 320, rot: -6, initRot: -7, bg:'linear-gradient(145deg,#6366f1,#8b5cf6)' },
+  { id:'c5', tx: 410, ty: 230, rot:-10, initRot:  3, bg:'linear-gradient(145deg,#f43f5e,#fb923c)' },
+];
+
+/* Attach DOM + apply gradient + set initial stacked rotation */
+const cards = cardDefs.map(def => {
+  const el = document.getElementById(def.id);
+  el.style.background = def.bg;
+  el.style.transform = `rotate(${def.initRot}deg)`;
+  return { ...def, el };
+});
+
+/* Lerped state — start at center, scale 1, initRot visible */
+const state = cards.map(c => ({ x: 0, y: 0, rot: c.initRot }));
+
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+/* Ease-out-cubic: fast at start, decelerate at end */
+function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+let rafId = null;
+
+function getProgress() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  return max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+}
+
+function tick() {
+  const progress = getProgress();
+  const eased = easeOut(progress);
+
+  /* Fade scroll hint */
+  const hint = document.getElementById('scrollHint');
+  hint.style.opacity = Math.max(0, 1 - progress * 15).toString();
+
+  let stillMoving = false;
+  const SPEED = 0.1;
+
+  cards.forEach((card, i) => {
+    const s = state[i];
+
+    const tX   = card.tx   * eased;
+    const tY   = card.ty   * eased;
+    /* Blend from initRot → card.rot as cards scatter */
+    const tRot = card.initRot + (card.rot - card.initRot) * eased;
+
+    s.x   = lerp(s.x,   tX,   SPEED);
+    s.y   = lerp(s.y,   tY,   SPEED);
+    s.rot = lerp(s.rot, tRot, SPEED);
+
+    card.el.style.transform =
+      `translate(${s.x}px,${s.y}px) rotate(${s.rot}deg)`;
+
+    if (
+      Math.abs(s.x - tX) > 0.1 ||
+      Math.abs(s.y - tY) > 0.1 ||
+      Math.abs(s.rot - tRot) > 0.02
+    ) stillMoving = true;
+  });
+
+  rafId = stillMoving ? requestAnimationFrame(tick) : null;
+}
+
+window.addEventListener('scroll', () => {
+  if (!rafId) rafId = requestAnimationFrame(tick);
+}, { passive: true });
+
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>

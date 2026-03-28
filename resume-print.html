@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李酈庭 Lily Lee — Resume</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Helvetica Neue', Arial, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  background: #f0ede8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+  color: #1c1a14;
+}
+
+/* ── Print button (hidden on print) ── */
+.print-bar {
+  width: 100%;
+  max-width: 794px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.btn-print, .btn-back {
+  padding: 9px 20px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-print {
+  background: #1c1a14;
+  color: #fff;
+}
+.btn-back {
+  background: #e5e0d8;
+  color: #1c1a14;
+}
+
+/* ── A4 paper ── */
+.paper {
+  width: 794px;
+  min-height: 1123px;
+  background: #fff;
+  box-shadow: 0 8px 48px rgba(0,0,0,.15);
+  display: grid;
+  grid-template-columns: 210px 1fr;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  background: #1c1a14;
+  color: #fff;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.s-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,.2);
+  margin-bottom: 16px;
+}
+.s-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.s-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.s-name-en {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+.s-title {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  padding: 4px 10px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.s-divider {
+  height: 1px;
+  background: rgba(255,255,255,.1);
+  margin: 18px 0;
+}
+.s-sec {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 10px;
+}
+.s-contact-item {
+  font-size: 11.5px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.6;
+  margin-bottom: 5px;
+  word-break: break-all;
+  text-decoration: none;
+  display: block;
+}
+a.s-contact-item { color: rgba(255,255,255,.75); }
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.skill-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 99px;
+  color: rgba(255,255,255,.85);
+}
+
+/* ── Main ── */
+.main {
+  padding: 40px 36px;
+}
+.m-name {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  margin-bottom: 2px;
+}
+.m-tagline {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 24px;
+}
+.m-sec-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #a855f7;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid #f0ede8;
+}
+.m-bio p {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: #4a4540;
+  margin-bottom: 8px;
+}
+
+/* ── Experience ── */
+.exp {
+  margin-top: 22px;
+}
+.exp-item {
+  margin-bottom: 18px;
+}
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+.exp-role {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1c1a14;
+}
+.exp-period {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+.exp-co {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+.exp-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.exp-ul li {
+  font-size: 12px;
+  color: #4a4540;
+  line-height: 1.6;
+  padding-left: 12px;
+  position: relative;
+}
+.exp-ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #a855f7;
+  font-weight: 700;
+}
+
+/* ── Education inline ── */
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 6px;
+}
+.edu-school { font-size: 13px; font-weight: 600; color: #1c1a14; }
+.edu-dept { font-size: 11.5px; color: #888; }
+
+/* ── Print styles ── */
+@media print {
+  body { background: #fff; padding: 0; }
+  .print-bar { display: none; }
+  .paper {
+    width: 100%;
+    box-shadow: none;
+    min-height: unset;
+  }
+  @page { size: A4; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <a href="index.html" class="btn-back">← 返回作品集</a>
+  <button class="btn-print" onclick="window.print()">⬇ 下載 PDF</button>
+</div>
+
+<div class="paper">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="s-avatar">
+      <img src="images/me2.webp" alt="Lily Lee">
+    </div>
+    <div class="s-name">李酈庭</div>
+    <div class="s-name-en">Lily Lee</div>
+    <div class="s-title">Web Designer</div>
+
+    <div class="s-sec">聯絡</div>
+    <a href="mailto:abbylee19940704@gmail.com" class="s-contact-item">✉ abbylee19940704@gmail.com</a>
+    <span class="s-contact-item">📍 台灣 · 新北市中和區</span>
+    <a href="https://dribbble.com/abbylee1994" class="s-contact-item" target="_blank">🎨 dribbble.com/abbylee1994</a>
+
+    <div class="s-divider"></div>
+
+    <div class="s-sec">技能工具</div>
+    <div class="skill-grid">
+      <span class="skill-tag">Figma</span>
+      <span class="skill-tag">Sketch</span>
+      <span class="skill-tag">Photoshop</span>
+      <span class="skill-tag">Illustrator</span>
+      <span class="skill-tag">After Effects</span>
+      <span class="skill-tag">InDesign</span>
+      <span class="skill-tag">HTML / CSS</span>
+      <span class="skill-tag">UI Design</span>
+      <span class="skill-tag">Illustration</span>
+    </div>
+
+    <div class="s-divider"></div>
+
+    <div class="s-sec">語言</div>
+    <span class="s-contact-item">中文（母語）</span>
+    <span class="s-contact-item">台語（中等）</span>
+    <span class="s-contact-item">英文（中等）</span>
+
+    <div class="s-divider"></div>
+
+    <div class="s-sec">學歷</div>
+    <span class="s-contact-item" style="font-weight:600;color:#fff;">國立雲林科技大學</span>
+    <span class="s-contact-item">創意生活設計系</span>
+    <span class="s-contact-item">2012 — 2016</span>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="m-name">李酈庭 Lily Lee</div>
+    <div class="m-tagline">資深網頁設計師 · Senior Web Designer · 9 Years Experience</div>
+
+    <div class="m-sec-title">關於我</div>
+    <div class="m-bio">
+      <p>來自台中，自幼受家庭薰陶對美學敏銳，畢業於國立雲林科技大學創意生活設計系。9 年歷程橫跨品牌視覺、插畫、活動頁與網站切版，擅長跨部門溝通，高壓環境下仍能穩定產出。</p>
+      <p>職涯從美術老師起步磨練溝通力；入行後以兩週自學 AE 獨立作業；2019 年隻身赴菲律賓擔任 UI 設計師，在陌生環境維持穩定輸出。目前於中嘉數位擔任資深網頁設計師，主導 Disney+、DAZN、雙 11 等大型活動頁。接案合作對象含公視台語台、教育部國教署、北市府熊讚。</p>
+    </div>
+
+    <div class="exp">
+      <div class="m-sec-title">工作經歷</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">資深網頁設計師</div>
+          <div class="exp-period">2024/12 — 至今</div>
+        </div>
+        <div class="exp-co">中嘉數位股份有限公司（Homeplus Digital）</div>
+        <ul class="exp-ul">
+          <li>配合行銷策略優化官網內容頁面，提升整體視覺一致性。</li>
+          <li>製作異業合作（Disney+、DAZN）、節慶檔期（雙11）之 KV、Banner 及活動頁。</li>
+          <li>獨立負責專案時程追蹤與解決方案提出，確保穩定交付。</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">UI 設計師</div>
+          <div class="exp-period">2019/08 — 2024/10</div>
+        </div>
+        <div class="exp-co">安博集團（菲律賓 / 遠端）</div>
+        <ul class="exp-ul">
+          <li>為旗下多個平台設計 UI/UX 介面與行銷素材，持續提升用戶體驗。</li>
+          <li>製作 Motion Graphics 用於社群廣告與產品介紹影片。</li>
+          <li>全遠端辦公環境下獨立完成任務，展現高度自律與精準交付能力。</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">設計助理</div>
+          <div class="exp-period">2017/07 — 2019/07</div>
+        </div>
+        <div class="exp-co">bigbigchannel — 聯意投資股份有限公司</div>
+        <ul class="exp-ul">
+          <li>負責節目海報、社群內容及廣告橫幅設計製作。</li>
+          <li>利用 After Effects 製作節目轉場特效與行銷影片。</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">平面設計接案</div>
+          <div class="exp-period">2020 — 至今（兼職）</div>
+        </div>
+        <div class="exp-co">自由接案</div>
+        <ul class="exp-ul">
+          <li>合作客戶涵蓋公視台語台、教育部國教署、北市府熊讚等知名單位。</li>
+          <li>負責插畫設計、視覺延伸與社群素材製作，獨立完成需求溝通至交付全流程。</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">美術老師</div>
+          <div class="exp-period">2013/04 — 2017/01</div>
+        </div>
+        <div class="exp-co">郭老師美術教室 — 雲林縣虎尾鎮</div>
+        <ul class="exp-ul">
+          <li>規劃並教授兒童與青少年美術課程（素描、水彩、彩繪）。</li>
+          <li>提供學生個別化創作指導，培養創意表達能力。</li>
+          <li>與家長保持良好溝通，定期回饋學生學習進度。</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
