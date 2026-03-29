@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>cafe!n</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+
+  <!-- CSS 放在 head -->
+  <link rel="stylesheet" href="css/cafein.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- JS 加 defer，避免阻塞、確保 DOM 準備好 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function(){
+      new WOW().init();
+    });
+  </script>
+</head>
+<body>
+
+  <header class="navbar"></header>
+
+  <!-- 最外層（最大 2000px，置中） -->
+  <div class="page">
+    <section class="kv">
+      <div class="kv-wrapper">
+        <!-- 背景 -->
+        <div class="kv-img">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/webp/kv_m_bg.webp">
+            <img src="images/webp/kv_bg.webp" alt="KV 背景">
+          </picture>
+        </div>
+
+        <!-- 標題 -->
+        <div class="kv-text wow animate__animated animate__fadeInBottomRight data-wow-delay="0.3s“ data-wow-duration="1s">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/webp/kv_m_text.webp">
+            <img src="images/webp/kv_text.webp" alt="櫃檯">
+          </picture>
+        </div>       
+
+        <!-- 櫃檯 -->
+        <div class="kv-coffee wow animate__animated animate__slideInLeft" data-wow-duration="1s">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/webp/kv_m_coffee.webp">
+            <img src="images/webp/kv_coffee.webp" alt="櫃檯">
+          </picture>
+        </div>
+
+        <!-- wave 疊最上層，貼底 -->
+        <img class="wave" src="images/webp/wave.webp" alt="裝飾波形">
+
+       <!-- 豆子 -->
+       <div class="kv-bean wow animate__animated animate__slideInLeft" data-wow-duration="1s">
+         <picture>
+           <source media="(max-width: 767px)" srcset="images/webp/kv_m_bean.webp">
+           <img src="images/webp/kv_bean.webp" alt="豆子" class="bean-img">
+         </picture>
+       </div>
+      </div>
+    </section>
+  </div>
+  <!-- sec2 -->
+  <div class="sec2">
+   <div class="section-wrapper">
+     <div class="sec2_bg">
+       <picture>
+         <source media="(max-width: 767px)" srcset="images/webp/sec2_m_bg.webp">
+        <img src="images/webp/sec2_bg.webp" alt="sec2 背景">
+       </picture>
+      </div>
+     <div class="sec2_title wow animate__animated animate__flash" data-wow-delay="0.5s">
+       <picture>
+         <source media="(max-width: 767px)" srcset="images/webp/sec2_m_title.webp">
+        <img src="images/webp/sec2_title.webp" alt="sec2 背景">
+       </picture>
+      </div>
+
+     <div class="sec2_text">
+       <picture>
+         <source media="(max-width: 767px)" srcset="images/webp/sec2_m_text.webp">
+        <img src="images/webp/sec2_text.webp" alt="sec2 背景">
+       </picture>
+      </div>
+    
+     <div class="sec2_drip wow animate__animated animate__fadeInRight">
+       <picture>
+         <source media="(max-width: 767px)" srcset="images/webp/sec2_bg_m_drip.webp">
+        <img src="images/webp/sec2_bg_drip.webp" alt="sec2盒子">
+       </picture>
+      </div>   
+     
+      <div class="sec2_btn">
+      <a href="https://www.momoshop.com.tw/goods/GoodsDetail.jsp?i_code=14441435" target="_blank">
+       <picture>
+         <source media="(max-width: 767px)" srcset="images/webp/sec2_m_btn.webp">
+        <img src="images/webp/sec2_btn.webp" alt="立即購買按鈕">
+       </picture>
+      </a>   
+     </div> 
+    </div>
+  </div>
+
+<!-- sec3 -->
+   <div class="sec3 wow animate__animated animate__fadeInUp">
+     <div class="section-wrapper">
+       <div class="sec3_bg">
+         <picture>
+           <source media="(max-width: 767px)" srcset="images/webp/sec3_m.webp">
+           <img src="images/webp/sec3.webp" alt="sec3 背景">
+         </picture>
+       </div>
+     </div>
+   </div>
+<!-- 世界冠軍 套入系統商品頁-->
+    <div class="content wow animate__animated animate__fadeInUp">
+      <div class="main-text">
+        <span class="gold">世界冠軍</span><span class="black">系列</span>
+      </div>
+    </div>
+
+<!-- sec4 -->
+    <div class="sec4 wow animate__animated animate__fadeInUp">
+     <div class="section-wrapper">
+       <div class="sec4_bg">
+         <picture>
+           <source media="(max-width: 767px)" srcset="images/webp/sec4_m.webp">
+           <img src="images/webp/sec4.webp" alt="sec4 背景">
+         </picture>
+       </div>
+     </div>
+   </div>
+<!-- 劃時代新產品 -->
+    <div class="content wow animate__animated animate__fadeInUp">
+      <div class="main-text">
+       <span class="black">劃時代</span><span class="gold">新產品</span>
+      </div>
+    </div>
+
+ <!-- sec5 -->
+   <div class="sec5 wow animate__animated animate__fadeInUp">
+     <div class="section-wrapper">
+       <div class="sec5_bg">
+         <picture>
+           <source media="(max-width: 767px)" srcset="images/webp/sec5_m.webp">
+           <img src="images/webp/sec5.webp" alt="sec5 背景">
+         </picture>
+       </div>
+     </div>
+   </div>
+
+<!-- 稀釋即飲系列 套入系統商品頁-->
+    <div class="content wow animate__animated animate__fadeInUp">
+      <div class="main-text">
+        <span class="gold">稀釋即飲</span><span class="black">系列</span>
+      </div>
+    </div>
+
+<!-- 探索金獎咖啡 套入系統商品頁-->
+    <div class="content wow animate__animated animate__fadeInUp">
+      <div class="main-text">
+        <span class="black">探索</span><span class="gold">金獎咖啡</span>
+      </div>
+    </div>
+
+ <!-- sec6 商品館 -->
+   <div class="sec6 wow animate__animated animate__fadeInUp">
+     <div class="section-wrapper">
+       <div class="sec6_bg">
+      <a href="https://www.momoshop.com.tw/category/DgrpCategory.jsp?d_code=2002001340" target="_blank" class="sec6-link">       
+         <picture>
+           <source media="(max-width: 767px)" srcset="images/webp/sec6_m.webp">
+           <img src="images/webp/sec6.webp" alt="sec5 背景">
+         </picture>
+      </a>
+       </div>
+     </div>
+   </div>
+
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const beanWrap = document.querySelector(".kv-bean");
+  const beanImg  = document.querySelector(".bean-img");
+
+  const onEnd = (e) => {
+    if (e.animationName === "slideInLeft") {   // Animate.css 動畫結束
+      beanImg.classList.add("breathing");      // 啟動呼吸縮放
+      beanWrap.removeEventListener("animationend", onEnd);
+      beanWrap.removeEventListener("webkitAnimationEnd", onEnd);
+    }
+  };
+
+  beanWrap.addEventListener("animationend", onEnd);
+  beanWrap.addEventListener("webkitAnimationEnd", onEnd); // Safari 支援
+});
+</script>
+</body>
+</html>
