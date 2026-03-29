@@ -1,0 +1,260 @@
+html, body {
+  height: 100%;      /* 讓背景可以覆蓋整個頁面 */
+  margin: 0;
+}
+
+body {
+  background-image: url('../images/webp/bg.webp'); /* 注意路徑：從 css/ 出發 */
+  background-size: 100% auto;   /* 背景寬度跟螢幕一樣，高度自動縮放 */
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+/* 思源黑體 Bold */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap');
+
+
+.kv-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2000 / 613; /* 預設 PC 比例 */
+  overflow: hidden;
+}
+
+/* 背景圖（最底層） */
+.kv-img {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  bottom: 2;
+  z-index: 1;
+}
+.kv-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 櫃檯圖（中間層） */
+.kv-text {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  bottom: 2;
+  z-index: 3;
+}
+.kv-text img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 如果櫃檯要完整顯示可改 contain */
+  display: block;
+}
+
+/* 櫃檯圖（中間層） */
+.kv-coffee {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  bottom: 2;
+  z-index: 2;
+}
+.kv-coffee img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 如果櫃檯要完整顯示可改 contain */
+  display: block;
+}
+
+/* wave（貼底） */
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+  display: block;
+}
+
+/* 豆子最上面 */
+.kv-bean {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+}
+.kv-bean img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 豆子呼吸縮放動畫 */
+@keyframes beanBreath {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); } /* 放大 5% */
+}
+
+/* 當進場結束後加上 .breathing 就會啟動 */
+.bean-img.breathing {
+  animation: beanBreath 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* 外層：置中 */
+.sec2, .sec3, .sec4, .sec5, .sec6{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+/* 共用版心：桌機 60%，最大 1200 */
+.section-wrapper {
+  width: 60%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.sec2 .section-wrapper{
+    overflow: hidden; /* 限制內容不要超出 */
+}
+
+/* 圖片等比縮放 */
+.section-wrapper picture,
+.section-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content{
+  display: flex;
+ justify-content: center;
+}
+
+.main-text {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 700;
+  font-size: 48px;  
+  text-align: center;
+}
+
+.content{
+  margin-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+/* sec2 */
+.section-wrapper {
+  position: relative;
+}
+
+/* 背景圖：鋪滿容器 */
+.sec2_bg {
+  position: relative; /* 可用 absolute: inset:0; 如果要強制鋪滿 */
+  z-index: 1;
+}
+.sec2_bg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 標題圖：疊在背景上 */
+.sec2_title,.sec2_text, .sec2_btn, .sec2_drip{
+  position: absolute;
+  inset: 0;          /* 貼齊背景 */
+  display: flex;     /* 如果要置中 */
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.sec2_title, .sec2_text, .sec2_btn, .sec2_drip img {
+  max-width: 100%;    /* 自行調整大小 */
+  height: auto;
+}
+/* 預設按鈕 */
+.sec2_btn a img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 滑入整個 sec2 區塊時，才觸發效果 */
+.sec2:hover .sec2_btn a img {
+  transform: translateY(-5px); /* 下移 5px，可依需求調整 */
+  filter: brightness(1.15);            /* 提亮 */
+}
+
+
+/* 商品館hover效果 */
+.sec6-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* hover 時加 PNG 外形陰影 */
+.sec6-link:hover img {
+  transform: translateY(4px);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* 字顏色分開 */
+.main-text .gold {
+  color: #b79369; /* 金黃色 */
+}
+
+.main-text .black {
+  color: #000; /* 黑色 */
+}
+
+/* 手機版 (<=767px) 改用 960:549 */
+@media (max-width: 767px) {
+
+    body {
+    background-size: cover;     /* 手機：背景鋪滿畫面 */
+    background-position: center;
+  }
+
+  .kv-wrapper,
+  .kv-img,
+  .kv-coffee {
+    aspect-ratio: 960 / 549; /* 手機比例 */
+  }
+  .section-wrapper {
+    width: 100%;
+    max-width: none;
+  }
+
+  .main-text{
+    font-size: 28px;
+  }
+
+  .content{
+    margin-top: 4vw;
+    padding-bottom: 4vw;
+  }
+
+  .sec3, .sec4, .sec5, .sec6{
+  margin-top: 4vw;
+  padding-bottom: 4vw;
+}
+
+.sec2{
+  margin-top: 0vw;
+}
+
+}
+
+/* iPad 區間 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-text {
+    font-size: 36px;
+  }
+}
