@@ -19,7 +19,7 @@
   <a href="#" class="nav-logo" onclick="goPage('home',event)">LL</a>
   <div class="nav-links" id="navLinks">
     <a href="#" id="nl-home" class="active" onclick="goPage('home',event)" data-i18n="nav-home">首頁</a>
-    <a href="#" onclick="goAnchor('projects',event)" data-i18n="nav-projects">作品</a>
+    <a href="#" onclick="goPage('portfolio',event)" data-i18n="nav-projects">作品</a>
 <a href="#" onclick="goAnchor('contact',event)" data-i18n="nav-contact">聯絡我</a>
   </div>
   <a href="#" class="nav-resume-btn" onclick="goPage('resume',event)" data-i18n="nav-resume">履歷 ↓</a>
@@ -195,7 +195,7 @@
           </div>
         </a>
 
-        <a href="wbc.html" class="ps-card" id="ps1" target="_blank" rel="noopener">
+        <a href="/wbc.html" class="ps-card" id="ps1" target="_blank" rel="noopener">
           <div class="ps-thumb">
             <img src="images/project-09.webp" alt="WBC">
           </div>
@@ -208,15 +208,15 @@
           </div>
         </a>
 
-        <a href="https://www.homeplus.net.tw/cable/page/bdkf2g" class="ps-card" id="ps2" target="_blank" rel="noopener">
+        <a href="pts.html" class="ps-card" id="ps2" target="_blank" rel="noopener">
           <div class="ps-thumb">
-            <img src="images/project-03.webp" alt="智慧社區">
+            <img src="images/tps/cover_2.webp" alt="公視台語台">
           </div>
           <div class="ps-body">
             <div class="ps-num">03 / 06</div>
-            <span class="web-label" data-i18n="p3-label">活動頁</span>
-            <div class="ps-name" data-i18n="p3-name">智慧社區活動頁</div>
-            <p class="ps-desc" data-i18n="p3-desc">清晰呈現智慧家庭方案特色與使用情境。</p>
+            <span class="web-label" data-i18n="p3-label">社群視覺</span>
+            <div class="ps-name" data-i18n="p3-name">公視台語台</div>
+            <p class="ps-desc" data-i18n="p3-desc">YouTube 封面與 Facebook 首頁橫幅設計。</p>
             <div class="web-cta ps-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div>
           </div>
         </a>
@@ -440,6 +440,10 @@
   </div>
   <div class="section">
     <div class="web-grid">
+      <a href="pts.html" target="_blank" rel="noopener" class="web-card">
+        <div class="web-thumb"><img src="images/tps/cover_1.webp" alt="公視台語台"></div>
+        <div class="web-body"><span class="web-label" data-i18n="pp-pts-label">社群視覺</span><div class="web-name" data-i18n="pp-pts-name">公視台語台</div><p class="web-desc" data-i18n="pp-pts-desc">YouTube 封面與 Facebook 首頁橫幅設計。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
+      </a>
       <a href="https://dribbble.com/abbylee1994" target="_blank" rel="noopener" class="web-card">
         <div class="web-thumb"><img src="images/project-04.webp" alt="插畫"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp1-label">平面 &amp; 插畫</span><div class="web-name" data-i18n="pp1-name">平面與插畫作品集</div><p class="web-desc" data-i18n="pp1-desc">Dribbble 上的平面設計與插畫創作。</p><div class="web-cta"><span class="web-cta-text">Dribbble</span><div class="web-arrow">↗</div></div></div>
@@ -520,6 +524,9 @@ function goAnchor(id, e) {
   }
 }
 
+
+/* ── HASH ON LOAD ── */
+if (location.hash === '#portfolio') goPage('portfolio', null);
 
 /* ── SCROLL REVEAL ── */
 function triggerReveal() {
@@ -693,7 +700,7 @@ const i18n = {
     'proj-viewall': '查看全部 →',
     'p1-label': '活動頁', 'p1-name': '雙 11 劇無霸活動頁', 'p1-desc': '以高飽和視覺建構大促氛圍，在高流量下引導使用者直覺完成購物轉換。',
     'p2-label': '活動頁', 'p2-name': 'WBC 活動頁', 'p2-desc': '運用動態排版捕捉賽事張力，強化即時資訊的易讀性與互動感。',
-    'p3-label': '活動頁', 'p3-name': '智慧社區活動頁', 'p3-desc': '將複雜的智慧家庭技術模組化，透過情境式導引降低使用者的理解門檻。',
+    'p3-label': '社群視覺', 'p3-name': '公視台語台', 'p3-desc': 'YouTube 封面與 Facebook 首頁橫幅設計。',
     'p4-label': '平面 &amp; 插畫', 'p4-name': '平面與插畫作品集', 'p4-desc': '探索視覺符號與色彩的實驗性創作，展現多元的視覺表現力與細節。',
     'p5-label': '活動頁', 'p5-name': '歡慶母親節活動頁', 'p5-desc': '捨棄繁雜裝飾，以純粹的情感語彙營造溫馨基調，提升品牌的親近度。',
     'p6-label': '活動頁', 'p6-name': 'CAFE!N 活動頁', 'p6-desc': '延續品牌的職人極簡風格，在美學與導購點擊率之間取得精準平衡。',
@@ -745,6 +752,7 @@ const i18n = {
     'about-footer-copy': '© 2025 李酈庭 Lily Lee',
     'port-eyebrow': '所有作品',
     'port-desc': '從活動頁到品牌視覺，每個專案都是一次說故事的機會。近十年跨領域設計經驗的完整精選。',
+    'pp-pts-label': '社群視覺', 'pp-pts-name': '公視台語台', 'pp-pts-desc': 'YouTube 封面與 Facebook 首頁橫幅設計。',
     'pp1-label': '平面 &amp; 插畫', 'pp1-name': '平面與插畫作品集', 'pp1-desc': '探索視覺符號與色彩的實驗性創作，收錄於 Dribbble 的個人設計輯。',
     'pp2-label': '活動頁', 'pp2-name': '雙 11 劇無霸活動頁', 'pp2-desc': '以高飽和視覺建構大促氛圍，在高流量下引導使用者直覺完成購物轉換。',
     'pp3-label': '活動頁', 'pp3-name': '運動看 DAZN 活動頁', 'pp3-desc': '整合跨品牌視覺語彙，為運動串流平台打造具臨場感的聯名活動頁。',
@@ -776,7 +784,7 @@ const i18n = {
     'proj-viewall': 'View all →',
     'p1-label': 'Campaign', 'p1-name': 'Double 11 Mega Event', 'p1-desc': 'Built an immersive shopping atmosphere through high-saturation visuals to drive user conversion under high traffic.',
     'p2-label': 'Campaign', 'p2-name': 'WBC Event Page', 'p2-desc': 'Utilized dynamic typography to capture the tension of the tournament while enhancing readability and engagement.',
-    'p3-label': 'Campaign', 'p3-name': 'Smart Community Page', 'p3-desc': 'Modularized complex smart home features through scenario-based navigation to reduce user cognitive load.',
+    'p3-label': 'Social Visual', 'p3-name': 'PTS Taiwanese Channel', 'p3-desc': 'YouTube channel art and Facebook cover banner design.',
     'p4-label': 'Graphic & Illustration', 'p4-name': 'Design Portfolio', 'p4-desc': 'Explored experimental visual symbols and color palettes, showcasing versatile artistic expression and detail.',
     'p5-label': 'Campaign', 'p5-name': "Mother's Day Campaign", 'p5-desc': 'Minimalist emotional storytelling that establishes a warm brand tone to enhance user affinity.',
     'p6-label': 'Campaign', 'p6-name': 'CAFE!N Campaign', 'p6-desc': "Maintained the brand's minimalist craft aesthetic while achieving a precise balance between design and CTR.",
@@ -828,6 +836,7 @@ const i18n = {
     'about-footer-copy': '© 2025 Lily Lee',
     'port-eyebrow': 'All Work',
     'port-desc': 'From campaign pages to brand visuals — every project is a chance to tell a story. A curated selection from nearly a decade of cross-disciplinary design.',
+    'pp-pts-label': 'Social Visual', 'pp-pts-name': 'PTS Taiwanese Channel', 'pp-pts-desc': 'YouTube channel art and Facebook cover banner design.',
     'pp1-label': 'Graphic & Illustration', 'pp1-name': 'Design Portfolio', 'pp1-desc': 'Experimental exploration of visual symbols and color palettes on Dribbble.',
     'pp2-label': 'Campaign', 'pp2-name': 'Double 11 Mega Event', 'pp2-desc': 'Built an immersive shopping atmosphere to drive user conversion during high-traffic peak seasons.',
     'pp3-label': 'Campaign', 'pp3-name': 'DAZN Sports Campaign', 'pp3-desc': 'Integrated co-branded visual languages to create an immersive experience for the streaming platform.',
