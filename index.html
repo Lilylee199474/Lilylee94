@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Lily Lee — Visual / Digital Designer</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="Lily Lee — Visual / Digital Designer">
+<meta property="og:description" content="近十年跨領域設計經驗，涵蓋活動頁、品牌視覺、插畫與 Motion。">
+<meta property="og:image" content="images/og.webp">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="images/og.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -16,14 +22,14 @@
 
 <!-- ── FLOATING PILL NAV ── -->
 <nav>
-  <a href="#" class="nav-logo" onclick="goPage('home',event)">LL</a>
+  <a href="#" class="nav-logo" onclick="goPage('home',event)" aria-label="回首頁 — Lily Lee">LL</a>
   <div class="nav-links" id="navLinks">
     <a href="#" id="nl-home" class="active" onclick="goPage('home',event)" data-i18n="nav-home">首頁</a>
     <a href="#" onclick="goPage('portfolio',event)" data-i18n="nav-projects">作品</a>
 <a href="#" onclick="goAnchor('contact',event)" data-i18n="nav-contact">聯絡我</a>
   </div>
   <a href="#" class="nav-resume-btn" onclick="goPage('resume',event)" data-i18n="nav-resume">履歷 ↓</a>
-  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="切換語言 / Switch language">EN</button>
 </nav>
 
 <!-- ══════════════════════ HOME ══════════════════════ -->
@@ -119,44 +125,44 @@
         <p class="skillset-eyebrow" data-i18n="skills-eyebrow">What I bring to the table</p>
         <h2 class="skillset-h2">My <em>'Hire Me'</em><br>Skillset</h2>
         <ul class="sk-mobile-list">
-          <li><span class="sk-ml-icon">🎨</span><span data-i18n="sk1">Visual Design</span></li>
-          <li><span class="sk-ml-icon">💻</span><span data-i18n="sk2">Digital Design</span></li>
-          <li><span class="sk-ml-icon">⚡</span><span data-i18n="sk3">Vibe Coding</span></li>
-          <li><span class="sk-ml-icon">🎨</span><span data-i18n="sk4">Illustration</span></li>
-          <li><span class="sk-ml-icon">🌐</span><span data-i18n="sk5">Web Design</span></li>
-          <li><span class="sk-ml-icon">✦</span><span data-i18n="sk6">Motion &amp; Design</span></li>
+          <li><span class="sk-ml-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span><span data-i18n="sk1">Visual Design</span></li>
+          <li><span class="sk-ml-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><span data-i18n="sk2">Digital Design</span></li>
+          <li><span class="sk-ml-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><span data-i18n="sk3">Vibe Coding</span></li>
+          <li><span class="sk-ml-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></span><span data-i18n="sk4">Illustration</span></li>
+          <li><span class="sk-ml-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span data-i18n="sk5">Web Design</span></li>
+          <li><span class="sk-ml-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span><span data-i18n="sk6">Motion &amp; Design</span></li>
         </ul>
       </div>
 
       <!-- Cards on top -->
       <div class="skillset-cards-stage" id="skStage">
         <div class="sk-card" id="sk0">
-          <span class="sk-card-icon">🎨</span>
+          <span class="sk-card-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span>
           <span class="sk-card-num">01</span>
           <span class="sk-card-name" data-i18n="sk1">Visual Design</span>
         </div>
         <div class="sk-card" id="sk1">
-          <span class="sk-card-icon">💻</span>
+          <span class="sk-card-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
           <span class="sk-card-num">02</span>
           <span class="sk-card-name" data-i18n="sk2">Digital Design</span>
         </div>
         <div class="sk-card" id="sk2">
-          <span class="sk-card-icon">⚡</span>
+          <span class="sk-card-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
           <span class="sk-card-num">03</span>
           <span class="sk-card-name" data-i18n="sk3">Vibe Coding</span>
         </div>
         <div class="sk-card" id="sk3">
-          <span class="sk-card-icon">🎨</span>
+          <span class="sk-card-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
           <span class="sk-card-num">04</span>
           <span class="sk-card-name" data-i18n="sk4">Illustration</span>
         </div>
         <div class="sk-card" id="sk4">
-          <span class="sk-card-icon">🌐</span>
+          <span class="sk-card-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
           <span class="sk-card-num">05</span>
           <span class="sk-card-name" data-i18n="sk5">Web Design</span>
         </div>
         <div class="sk-card" id="sk5">
-          <span class="sk-card-icon">✦</span>
+          <span class="sk-card-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
           <span class="sk-card-num">06</span>
           <span class="sk-card-name" data-i18n="sk6">Motion &amp;Design</span>
         </div>
@@ -184,7 +190,7 @@
 
         <a href="./double11/" class="ps-card" id="ps0" target="_blank" rel="noopener">
           <div class="ps-thumb">
-            <img src="images/project-01.webp" alt="雙11">
+            <img src="images/project-01.webp" alt="雙11" loading="lazy">
           </div>
           <div class="ps-body">
             <div class="ps-num">01 / 06</div>
@@ -197,7 +203,7 @@
 
         <a href="wbc.html" class="ps-card" id="ps1" target="_blank" rel="noopener">
           <div class="ps-thumb">
-            <img src="images/project-09.webp" alt="WBC">
+            <img src="images/project-09.webp" alt="WBC" loading="lazy">
           </div>
           <div class="ps-body">
             <div class="ps-num">02 / 06</div>
@@ -210,7 +216,7 @@
 
         <a href="pts.html" class="ps-card" id="ps2" target="_blank" rel="noopener">
           <div class="ps-thumb">
-            <img src="images/tps/cover_2.webp" alt="公視台語台">
+            <img src="images/tps/cover_2.webp" alt="公視台語台" loading="lazy">
           </div>
           <div class="ps-body">
             <div class="ps-num">03 / 06</div>
@@ -222,7 +228,7 @@
         </a>
 
         <a href="https://dribbble.com/abbylee1994" class="ps-card" id="ps3" target="_blank" rel="noopener">
-          <div class="ps-thumb"><img src="images/project-04.webp" alt="插畫"></div>
+          <div class="ps-thumb"><img src="images/project-04.webp" alt="插畫" loading="lazy"></div>
           <div class="ps-body">
             <div class="ps-num">04 / 06</div>
             <span class="web-label" data-i18n="p4-label">平面 &amp; 插畫</span>
@@ -233,7 +239,7 @@
         </a>
 
         <a href="./mother/" class="ps-card" id="ps4" target="_blank" rel="noopener">
-          <div class="ps-thumb"><img src="images/project-05.webp" alt="母親節"></div>
+          <div class="ps-thumb"><img src="images/project-05.webp" alt="母親節" loading="lazy"></div>
           <div class="ps-body">
             <div class="ps-num">05 / 06</div>
             <span class="web-label" data-i18n="p5-label">活動頁</span>
@@ -244,7 +250,7 @@
         </a>
 
         <a href="./cafein/cafein.html" class="ps-card" id="ps5" target="_blank" rel="noopener">
-          <div class="ps-thumb"><img src="images/project-06.webp" alt="Cafe!n"></div>
+          <div class="ps-thumb"><img src="images/project-06.webp" alt="Cafe!n" loading="lazy"></div>
           <div class="ps-body">
             <div class="ps-num">06 / 06</div>
             <span class="web-label" data-i18n="p6-label">活動頁</span>
@@ -326,7 +332,7 @@
 <!-- ══════════════════════ RESUME ══════════════════════ -->
 <div id="page-resume" class="page">
   <div class="resume-dl-bar">
-    <a href="resume-print.html" target="_blank" class="resume-dl-btn">⬇ 下載 PDF</a>
+    <a href="resume-print.html" target="_blank" class="resume-dl-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 下載 PDF</a>
   </div>
   <div class="resume-layout">
     <aside class="resume-sidebar">
@@ -334,13 +340,13 @@
         <div class="r-avatar">
           <img src="images/me2.webp" alt="Lily Lee">
         </div>
-        <a href="resume-print.html" target="_blank" class="resume-dl-btn r-dl-mobile">⬇ 下載 PDF</a>
+        <a href="resume-print.html" target="_blank" class="resume-dl-btn r-dl-mobile"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 下載 PDF</a>
       </div>
       <div class="r-name">李酈庭</div>
       <div class="r-tag">Web Designer</div>
-      <a href="mailto:abbylee19940704@gmail.com" class="r-contact">✉ abbylee19940704@gmail.com</a>
-      <div class="r-contact">📍 Taiwan</div>
-      <a href="https://dribbble.com/abbylee1994" target="_blank" rel="noopener" class="r-contact">🎨 dribbble.com/abbylee1994</a>
+      <a href="mailto:abbylee19940704@gmail.com" class="r-contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> abbylee19940704@gmail.com</a>
+      <div class="r-contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Taiwan</div>
+      <a href="https://dribbble.com/abbylee1994" target="_blank" rel="noopener" class="r-contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"/><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"/><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"/></svg> dribbble.com/abbylee1994</a>
       <div class="r-sec-label" data-i18n="r-skills-label">技能</div>
       <div>
         <span class="skill-pill">Figma</span>
@@ -441,47 +447,47 @@
   <div class="section">
     <div class="web-grid">
       <a href="pts.html" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/tps/cover_1.webp" alt="公視台語台"></div>
+        <div class="web-thumb"><img src="images/tps/cover_1.webp" alt="公視台語台" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp-pts-label">社群視覺</span><div class="web-name" data-i18n="pp-pts-name">公視台語台</div><p class="web-desc" data-i18n="pp-pts-desc">YouTube 封面與 Facebook 首頁橫幅設計。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="https://dribbble.com/abbylee1994" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-04.webp" alt="插畫"></div>
+        <div class="web-thumb"><img src="images/project-04.webp" alt="插畫" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp1-label">平面 &amp; 插畫</span><div class="web-name" data-i18n="pp1-name">平面與插畫作品集</div><p class="web-desc" data-i18n="pp1-desc">Dribbble 上的平面設計與插畫創作。</p><div class="web-cta"><span class="web-cta-text">Dribbble</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="./double11/" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-01.webp" alt="雙11"></div>
+        <div class="web-thumb"><img src="images/project-01.webp" alt="雙11" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp2-label">活動頁</span><div class="web-name" data-i18n="pp2-name">雙 11 劇無霸活動頁</div><p class="web-desc" data-i18n="pp2-desc">強烈視覺張力帶動促銷氛圍。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="https://www.homeplus.net.tw/cable/page/82" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-02.webp" alt="DAZN"></div>
+        <div class="web-thumb"><img src="images/project-02.webp" alt="DAZN" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp3-label">活動頁</span><div class="web-name" data-i18n="pp3-name">運動看 DAZN 活動頁</div><p class="web-desc" data-i18n="pp3-desc">DAZN 串流平台合作活動專頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="https://www.homeplus.net.tw/cable/page/bdkf2g" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-03.webp" alt="智慧社區"></div>
+        <div class="web-thumb"><img src="images/project-03.webp" alt="智慧社區" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp4-label">活動頁</span><div class="web-name" data-i18n="pp4-name">智慧社區活動頁</div><p class="web-desc" data-i18n="pp4-desc">智慧家庭方案清晰介紹頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="wbc.html" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-09.webp" alt="WBC經典賽"></div>
+        <div class="web-thumb"><img src="images/project-09.webp" alt="WBC經典賽" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp5-label">活動頁</span><div class="web-name" data-i18n="pp5-name">WBC 經典賽活動頁</div><p class="web-desc" data-i18n="pp5-desc">世界棒球經典賽台灣主題活動視覺設計。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="https://www.homeplus.net.tw/cable/page/2" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-08.webp" alt="短約"></div>
+        <div class="web-thumb"><img src="images/project-08.webp" alt="短約" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp6-label">產品頁</span><div class="web-name" data-i18n="pp6-name">短約產品頁</div><p class="web-desc" data-i18n="pp6-desc">彈性短約方案清晰介紹頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="https://www.homeplus.net.tw/cable/page/1" target="_blank" rel="noopener" class="web-card">
-         <div class="web-thumb"><img src="images/project-07.webp" alt="升速"></div>
+         <div class="web-thumb"><img src="images/project-07.webp" alt="升速" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp7-label">產品頁</span><div class="web-name" data-i18n="pp7-name">升速產品頁</div><p class="web-desc" data-i18n="pp7-desc">網路升速方案產品頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="./mother/" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-05.webp" alt="母親節"></div>
+        <div class="web-thumb"><img src="images/project-05.webp" alt="母親節" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp8-label">活動頁</span><div class="web-name" data-i18n="pp8-name">歡慶母親節活動頁</div><p class="web-desc" data-i18n="pp8-desc">節日氛圍活動頁設計。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="./cafein/cafein.html" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/project-06.webp" alt="Cafe!n"></div>
+        <div class="web-thumb"><img src="images/project-06.webp" alt="Cafe!n" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp9-label">活動頁</span><div class="web-name" data-i18n="pp9-name">Cafe!n 活動頁</div><p class="web-desc" data-i18n="pp9-desc">咖啡品牌活動專頁。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
       <a href="cafein-gallery.html" target="_blank" rel="noopener" class="web-card">
-        <div class="web-thumb"><img src="images/cafein-img/cafe1.webp" alt="CAFE!N 視覺作品"></div>
+        <div class="web-thumb"><img src="images/cafein-img/cafe1.webp" alt="CAFE!N 視覺作品" loading="lazy"></div>
         <div class="web-body"><span class="web-label" data-i18n="pp10-label">品牌視覺</span><div class="web-name" data-i18n="pp10-name">CAFE!N 視覺作品</div><p class="web-desc" data-i18n="pp10-desc">硬咖啡品牌視覺素材集。</p><div class="web-cta"><span class="web-cta-text">View Project</span><div class="web-arrow">↗</div></div></div>
       </a>
     </div>
@@ -712,7 +718,7 @@ const i18n = {
     'know-sub': '探索我的興趣、故事，以及工作之外的生活。',
     'hobbies-eyebrow': '設計以外的我', 'hobby-pole': '競技鋼管', 'hobby-snow': '滑雪',
     'hobbies-body': '平常的興趣是競技鋼管與滑雪。兩種運動都需要力量、穩定度與長期練習，那種「反覆失敗後成功」的感覺讓我很著迷，這些興趣雖然看似與設計不同，但反而讓我在工作上更有紀律、更能承受壓力，也更願意挑戰新的技術。',
-    'contact-label': '保持聯繫',
+    'contact-label': '',
     'contact-h2': '<span class="grad-text">Contact</span><br>Me',
     'skills-eyebrow': '我的技能包',
     'sk1':'Visual Design','sk2':'Digital Design','sk3':'Vibe Coding',
@@ -755,7 +761,7 @@ const i18n = {
     'about-connect-label': '有合作想法嗎？',
     'about-footer-copy': '© 2025 李酈庭 Lily Lee',
     'port-eyebrow': '所有作品',
-    'port-desc': '從活動頁到品牌視覺，每個專案都是一次說故事的機會。近十年跨領域設計經驗的完整精選。',
+    'port-desc': '',
     'pp-pts-label': '社群視覺', 'pp-pts-name': '公視台語台', 'pp-pts-desc': 'YouTube 封面與 Facebook 首頁橫幅設計。',
     'pp1-label': '平面 &amp; 插畫', 'pp1-name': '平面與插畫作品集', 'pp1-desc': '探索視覺符號與色彩的實驗性創作，收錄於 Dribbble 的個人設計輯。',
     'pp2-label': '活動頁', 'pp2-name': '雙 11 劇無霸活動頁', 'pp2-desc': '以高飽和視覺建構大促氛圍，在高流量下引導使用者直覺完成購物轉換。',
